@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Dark-navy: #242742;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Dark-navy);
+  transition: all .3s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+  background-color: #fff;
+}
+
+picture {
+  width: 100vw;
+  border-radius: 0 0 25px 25px;
+}
+
+picture img {
+  width: 100%;
+}
+
+main {
+  padding: 2.5rem 1.5rem;
+  gap: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+body, input, button, label {
+  color: var(--Dark-navy);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+hgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .62rem;
+}
+
+li {
+  display: flex;
+  gap: 1rem;
+  align-items: start;  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+form div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: .5rem;
+}
+
+label {
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+input:not(.invalid) {
+  opacity: 50%;
+  border: 1px solid var(--Dark-navy);
+}
+
+input {
+  padding: 1rem;
+  border-radius: .5rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  color: white;
+  background-color: var(--Dark-navy);
+  padding: 1rem 0;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(204deg, #FF6A3A 0%, #FF527B 100%);
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.50);
+}
+
+.check {
+  width: 4rem;
+}
+
+input:focus {
+  opacity: 100%;
+}
+
+.invalid {
+  border: 1px solid #ff4141bd;
+  background-color: #ff000028;
+  color: #ff4141bd;
+  position: relative;
+}
+
+form div {
+  position: relative;
+}
+
+.invalid + label::after {
+  content: 'Valid email required';
+  position: absolute;
+  right: 0;
+  font-size: .75rem;
+  color: #ff4141bd;
+}
+
+
+@media (min-width: 1000px) {
+  .container {
+    height: fit-content;
+    flex-direction: row-reverse;
+    border-radius: 2.25rem;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  picture {
+    width: auto;
+  }
+
+  main hgroup {
+    max-width: 24rem;
+  }
+}
